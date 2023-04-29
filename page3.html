@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- <link rel="stylesheet" href="{{url_for('static', filename= 'css/home.css') }}"> -->
+<link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+
+
+  <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+ <link rel="stylesheet" href="home.css">
+
+<!--  <style>
+
+</style> -->
+  <title></title>
+</head>
+<body>
+
+<div class="container py-3">
+
+  <!-- For demo purpose -->
+  <div class="row mb-2">
+    <div class="col-lg-8 mx-auto text-center">
+      <h1 class="display-4">Print My Print</h1>
+      <!-- <p class="lead mb-0">Easily build a well-structured credit card form using Bootstrap 4</p> -->
+      <!-- <p class="lead">Snippet by <a href="https://bootstrapious.com/snippets">Bootstrapious</a></p> -->
+    </div>
+  </div>
+  <!-- End -->
+
+
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <div class="bg-white rounded-lg shadow-sm p-4">
+        <!-- Credit card form tabs -->
+        <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-card" class="nav-link rounded-pill">
+                                <i class="fa fa-credit-card"></i>
+                                Details
+                            </a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-paypal" class="nav-link  rounded-pill">
+                                <i class="fa fa-gear"></i>
+                                Config
+                            </a>
+          </li>
+          <li class="nav-item">
+            <a data-toggle="pill" href="#nav-tab-bank" class="nav-link  active rounded-pill">
+                                <i class="fa fa-university"></i>
+                                 Bill
+                             </a>
+          </li>
+        </ul>
+        <!-- End -->
+
+
+          <!-- ----------------------------------------------------------------------------- -->
+
+          <!-- bank transfer info -->
+          <div id="nav-tab-bank" class="tab-pane fade show active">
+
+
+            <form class="form-card" action = "/billing" method = "GET"><!--  <form>   -->
+                            <!-- <div class = "text"> -->
+                            <div class="row justify-content-center text-left">
+                                <div class="form-group col-sm-8 flex-column d-flex"> <label class="form-control-label px-3">Total Bill  :  ??  </label>
+                                    <!-- <input type="text" id="fname" name="Shipment_No" placeholder="" onblur="validate(1)">  -->
+                                </div>
+                            </div>
+          
+          </div>
+          <!-- End -->
+        </div>
+        <!-- End -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <script type="text/javascript" src="{{url_for('static', filename= 'js/home.js') }}" > </script> -->
+<script src="home.js"></script>
+</body>
+</html>
+
+
