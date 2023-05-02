@@ -18,7 +18,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
- <link rel="stylesheet" href="home.css">
+ <!-- <link rel="stylesheet" href="home.css"> -->
+ <link rel="stylesheet" href="{{url_for('static', filename= 'css/home.css') }}">
 
 <!--  <style>
 
@@ -52,16 +53,10 @@
                             </a>
           </li>
           <li class="nav-item">
-            <a data-toggle="pill" href="#nav-tab-paypal" class="nav-link rounded-pill">
-                                <i class="fa fa-gear"></i>
-                                Config
-                            </a>
+            
           </li>
           <li class="nav-item">
-            <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill">
-                                <i class="fa fa-university"></i>
-                                 Bill
-                             </a>
+            
           </li>
         </ul>
         <!-- End -->
@@ -70,6 +65,8 @@
         <!-- Credit card form content -->
         <div class="tab-content">
 
+
+ 
           <!-- credit card info-->
           <div id="nav-tab-card" class="tab-pane fade show active">
             <!-- <p class="alert alert-success">Some text success or error</p> -->
@@ -108,6 +105,14 @@
               </div>
 
 
+              <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Upload Files <span class="text-danger"> *</span></label> 
+                                    <input class=" btn btn-secondary btn-block" type="file" id="Upload_File" name="Upload_File" capture="Upload_File" placeholder="Files" multiple>
+                                 </div> 
+
+
+                            </div>
+
 
               <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
             </form>
@@ -116,42 +121,7 @@
 
 
 
-          <!-- ----------------------------------------------------------------------------- -->
 
-          <!-- Paypal info -->
-          <div id="nav-tab-paypal" class="tab-pane fade">
-            <p>Paypal is easiest way to pay online</p>
-            <p>
-              <button type="button" class="btn btn-primary rounded-pill"><i class="fa fa-paypal mr-2"></i> Log into my Paypal</button>
-            </p>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-          <!-- End -->
-
-
-
-          <!-- ----------------------------------------------------------------------------- -->
-
-          <!-- bank transfer info -->
-          <div id="nav-tab-bank" class="tab-pane fade">
-            <h6>Bank account details</h6>
-            <dl>
-              <dt>Bank</dt>
-              <dd> THE WORLD BANK</dd>
-            </dl>
-            <dl>
-              <dt>Account number</dt>
-              <dd>7775877975</dd>
-            </dl>
-            <dl>
-              <dt>IBAN</dt>
-              <dd>CZ7775877975656</dd>
-            </dl>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-          <!-- End -->
         </div>
         <!-- End -->
 
@@ -161,8 +131,9 @@
 </div>
 
 
-<!-- <script type="text/javascript" src="{{url_for('static', filename= 'js/home.js') }}" > </script> -->
-<script src="home.js"></script>
+<script type="text/javascript" src="{{url_for('static', filename= 'js/home.js') }}" > </script>
+<!-- <script src="home.js"></script> -->
+
 </body>
 </html>
 

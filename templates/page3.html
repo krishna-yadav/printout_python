@@ -18,7 +18,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
- <link rel="stylesheet" href="home.css">
+ <!-- <link rel="stylesheet" href="home.css"> -->
+ <link rel="stylesheet" href="{{url_for('static', filename= 'css/home.css') }}">
 
 <!--  <style>
 
@@ -27,12 +28,12 @@
 </head>
 <body>
 
-<div class="container py-3">
+<div class="container py-5">
 
   <!-- For demo purpose -->
-  <div class="row mb-2">
+  <div class="row mb-4">
     <div class="col-lg-8 mx-auto text-center">
-      <h1 class="display-4">Print My Print</h1>
+      <!-- <h1 class="display-4">Bootstrap 4 credit card form</h1> -->
       <!-- <p class="lead mb-0">Easily build a well-structured credit card form using Bootstrap 4</p> -->
       <!-- <p class="lead">Snippet by <a href="https://bootstrapious.com/snippets">Bootstrapious</a></p> -->
     </div>
@@ -42,23 +43,17 @@
 
   <div class="row">
     <div class="col-lg-7 mx-auto">
-      <div class="bg-white rounded-lg shadow-sm p-4">
+      <div class="bg-white rounded-lg shadow-sm p-5">
         <!-- Credit card form tabs -->
         <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
           <li class="nav-item">
-            <a data-toggle="pill" href="#nav-tab-card" class="nav-link rounded-pill">
-                                <i class="fa fa-credit-card"></i>
-                                Details
-                            </a>
+            
           </li>
           <li class="nav-item">
-            <a data-toggle="pill" href="#nav-tab-paypal" class="nav-link  rounded-pill">
-                                <i class="fa fa-gear"></i>
-                                Config
-                            </a>
+            
           </li>
           <li class="nav-item">
-            <a data-toggle="pill" href="#nav-tab-bank" class="nav-link  active rounded-pill">
+            <a data-toggle="pill" href="#nav-tab-bank" class="nav-link active rounded-pill">
                                 <i class="fa fa-university"></i>
                                  Bill
                              </a>
@@ -67,7 +62,10 @@
         <!-- End -->
 
 
-          <!-- ----------------------------------------------------------------------------- -->
+        <!-- Credit card form content -->
+        <div class="tab-content">
+
+
 
           <!-- bank transfer info -->
           <div id="nav-tab-bank" class="tab-pane fade show active">
@@ -83,6 +81,10 @@
           
           </div>
           <!-- End -->
+       
+
+
+
         </div>
         <!-- End -->
 
@@ -92,8 +94,9 @@
 </div>
 
 
-<!-- <script type="text/javascript" src="{{url_for('static', filename= 'js/home.js') }}" > </script> -->
-<script src="home.js"></script>
+<script type="text/javascript" src="{{url_for('static', filename= 'js/home.js') }}" > </script>
+<!-- <script src="home.js"></script> -->
+
 </body>
 </html>
 
