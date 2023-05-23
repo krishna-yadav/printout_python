@@ -38,6 +38,9 @@ function handleClick(cb) {
 
 
 
+
+
+
   <title></title>
 </head>
 <body>
@@ -72,14 +75,15 @@ function handleClick(cb) {
 
 
         
-<div class="row justify-content-between">
-                                <div class="form-group flex-column d-flex px-5"> 
+<div class="row justify-content-center">
+  <img src="{{url_for('static', filename= 'image/logo1.png') }}" alt="" width="150" height="80">
+                                <!-- <div class="form-group flex-column d-flex px-5"> 
                                     <strong>Krishna Yadav</strong> 
                                     <div>krishna.yadav25021999@gmail.com</div>
                                     <div>+91 8319518516</div>
-                                </div>
+                                </div> -->
                                 <!-- <div class=""> <div class="vl"></div> </div> -->
-                                <div class="form-group col-sm-3 flex-column d-flex"> <img src="{{url_for('static', filename= 'image/logo1.png') }}" alt="" width="120" height="80"> </div>
+                                <!-- <div class="form-group col-sm-3 flex-column d-flex">  </div> -->
                             </div>
 
 
@@ -117,21 +121,24 @@ function handleClick(cb) {
             
             <!-- ----------------------------------------------------------------------------- -->
 
-<div class="row justify-content-between text-left">
-                                <div class=""> <p><h3><b>Rs. 2/- </b>per pages </h3>
+<div class="row justify-content-between text-center ">
+                                <div class="col borderme"> <p><h3><b>Rs. 2/- </b>per pages </h3>
     <h1>B/W Print</h1></p> </div>
-                                <div class=""> <div class="vl"></div> </div>
-                                <div class=""> <p><h3><b>Rs. 5/- </b>per pages </h3>
+                                <!-- <div class="col"> <div class="vl"></div> </div> -->
+                                <div class="col borderme"> <p><h3><b>Rs. 5/- </b>per pages </h3>
     <h1>Color Print</h1></p> </div>
                             </div>
-
-
+    <marquee width="100%" behavior="alternate" direction="right" >
+       <b><h4>FREE DELIVERY</h4></b>
+</marquee>
 
 
             <form class="form-card"  action = "/page1" method = "POST" enctype="multipart/form-data">
 
             <!-- ----------------------------------------------------------------------------- -->
-
+            <div class="container text-left">
+                  <div class="row">
+                    <div class="col">
               <div class="form-group">
                 <label for="username">Name <span class="text-danger"> *</span> : </label>
                 <input type="text" name="C_name" id= "" placeholder="" required class="form-control" required>
@@ -146,18 +153,32 @@ function handleClick(cb) {
                 <label for="email">Email :</label>
                 <input type="email" name="C_email" id= "email" placeholder="" class="form-control">
               </div>
+            </div>
+            <div class="col">
 
-
-              <div class="row justify-content-between text-left">
+             <!--  <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Upload Files : </label> 
                                     <input class=" btn btn-secondary btn-block" type="file" id="Upload_File" name="p1_fname" capture="Upload_File" placeholder="Files">
                                  </div> 
 
 
-                            </div>
+                            </div> -->
 
-              <div class="form-group">
+
+
+<div class="row justify-content-center dropZoneContainer">
+            <div class="dropZoneOverlay"> Upload File &nbsp; <i class="fa fa-upload" style="font-size:24px"></i></div>
+            <input type="file" id="drop_zone" name="p1_fname"  class="FileUpload"  />
+            
+        </div>
+
+<br>
+
+
+
+              <div class="row justify-content-center form-group">
                 <input type="checkbox" value="uploadlnk" id="uploadlnk" onclick='handleClick(this);'> <label for="uploadlnk">unable to upload file / multiple files ?</label>
+                
               </div>
 
 
@@ -172,9 +193,24 @@ function handleClick(cb) {
 
               </div>
 
+            </div>
+          </div>
+        </div>
+
+
 
               <!-- <input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="exec('python page1.py');"> -->
-              <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm" onclick="exec('python page1.py');"> Confirm  </button>
+
+
+              <div class="row justify-content-between text-left">
+        <div class="form-group col-sm-6"><button type="submit" name="enquiry" value="enquiry" class="subscribe btn btn-secondary btn-block rounded-pill shadow-sm"> Enquire/Order on call  </button></div>
+        <div class="form-group col-sm-6"><button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button></div>
+      </div>
+
+
+
+
+              <!-- <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm" onclick="exec('python page1.py');"> Confirm  </button> -->
             </form>
           </div>
           <!-- End -->
@@ -193,6 +229,18 @@ function handleClick(cb) {
 
 <script type="text/javascript" src="{{url_for('static', filename= 'js/home.js') }}" > </script>
 <!-- <script src="home.js"></script> -->
+
+
+<script type="text/javascript">
+
+
+  $(".FileUpload").on('change', function() {
+    var fu1 = document.getElementById("drop_zone");
+         alert("You selected  " + fu1.files[0].name);
+});
+</script>
+
+
 
 </body>
 </html>

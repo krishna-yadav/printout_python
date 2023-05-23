@@ -18,6 +18,11 @@ def page1():
 		print(username, phone , email)
 		Upload_File = request.files['p1_fname']
 		Upload_Link = request.form.get("p1_link", False)
+		print(Upload_File.filename)
+		enquiry =  request.form.get("enquiry", False)
+
+		if enquiry == "enquiry" :
+			return render_template("goodbye.html", enquiry = enquiry)
 
 		user_folder = os.path.join("C:\\Users\\admin\\OneDrive\\Documents\\Kiran\\new")
 		Upload_File.save(join(user_folder, secure_filename(Upload_File.filename)))
@@ -44,6 +49,7 @@ def page1():
 def page2():
 	
 	if request.method == "POST":
+		print(request.form.get("Customise", False))
 		Duplexity_spec = request.form.get("p2_ds", False)
 		Color_spec = request.form.get("p2_cs", False)
 		Size_spec = request.form.get("p2_ss", False)
@@ -51,15 +57,24 @@ def page2():
 		G_loc = request.form.get("p2_mloc", False)
 		Address = request.form.get("p2_addr", False)
 
+		Customise = request.form.get("Customise", False)
+		print(Customise)
+		if Customise != "Customise":
+			return render_template("goodbye.html", enquiry = Customise)
+
+
+
+
 		print(Duplexity_spec, Color_spec, Size_spec,  Binding, G_loc , Address)
-		return redirect(url_for("page3"))
+		# return redirect(url_for("page3"))
+		return render_template("page3.html")
 
 	return render_template("page2.html")
 
-@app.route("/page3")
-def page3():
-	print("hrllo")
-	return render_template("page3.html")
+# @app.route("/page3")
+# def page3():
+# 	print("hrllo")
+# 	return render_template("page3.html")
 
 
 

@@ -48,14 +48,15 @@
 
 
 
-<div class="row justify-content-between">
-                                <div class="form-group flex-column d-flex px-5"> 
+<div class="row justify-content-center">
+  <img src="{{url_for('static', filename= 'image/logo1.png') }}" alt="" width="150" height="80">
+                                <!-- <div class="form-group flex-column d-flex px-5"> 
                                     <strong>Krishna Yadav</strong> 
                                     <div>krishna.yadav25021999@gmail.com</div>
                                     <div>+91 8319518516</div>
-                                </div>
+                                </div> -->
                                 <!-- <div class=""> <div class="vl"></div> </div> -->
-                                <div class="form-group col-sm-3 flex-column d-flex"> <img src="{{url_for('static', filename= 'image/logo1.png') }}" alt="" width="120" height="80"> </div>
+                                <!-- <div class="form-group col-sm-3 flex-column d-flex">  </div> -->
                             </div>
 
 
@@ -119,11 +120,18 @@
         <div class="mt-4 col-xl-8 col-lg-5 col-md-12 col-sm-12 d-flex justify-content-lg-end justify-content-md-center justify-content-xs-start">
           <div class="row align-items-center" style="font-size: 0.9rem;">
             <div class="col-auto"> <img src="https://apirone.com/static/promo/bitcoin_logo_vector.svg" class="img-fluid mb-3" style="max-height: 30px;" alt=""><br>
-              <span>Please send exact amount: <strong>0.000 Rs.</strong><br>
-              <strong>1DonateWffyhwAjskoEwXt83pHZxhLTr8H</strong></span><br>
-              <small class="text-muted">Please share the recipt</small> 
+              <span>Total Amount: <strong><h2>{{p2_response.final_price.total_cost}} Rs.</h2></strong><br>
+
+
+            
+              <!-- <strong>1DonateWffyhwAjskoEwXt83pHZxhLTr8H</strong></span><br>
+              <small class="text-muted">Please share the recipt</small>  -->
           </div>
-            <div class="col-auto"> <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=bitcoin%3A1DonateWffyhwAjskoEwXt83pHZxhLTr8H%3Famount%3D0.15050000" class="img-fluid" alt="" style="max-width: 114px;"> </div>
+            <div class=" col-auto"> <img src="data:image/png;base64, {{p2_response.opqr}}" alt="Red dot" style="max-width: 114px;"> </div>
+
+           
+
+
           </div>
         </div>
       </div>
@@ -144,34 +152,42 @@
               <td class="center">1</td>
               <!-- <td class="left strong">Origin License</td> -->
               <td class="left">B&W Pages</td>
-              <td class="right">print</td>
-              <td class="center">print</td>
-              <td class="right">print</td>
+              <td class="right">{{p2_response.final_price.no_of_BW_pages}}</td>
+              <td class="center">{{p2_response.final_price.CPP_BW}}</td>
+              <td class="right">{{p2_response.final_price.cost_BW_pages}}</td>
             </tr>
             <tr>
               <td class="center">2</td>
               <!-- <td class="left">Custom Services</td> -->
               <td class="left">Colour Pages</td>
-              <td class="right">print</td>
-              <td class="center">print</td>
-              <td class="right">print</td>
+              <td class="right">{{p2_response.final_price.no_of_color_pages}}</td>
+              <td class="center">{{p2_response.final_price.CPP_color}}</td>
+              <td class="right">{{p2_response.final_price.cost_color_pages}}</td>
             </tr>
             <tr>
               <td class="center">3</td>
               <!-- <td class="left">Hosting</td> -->
               <td class="left">Binding cost per copy</td>
-              <td class="right">print</td>
-              <td class="center">print</td>
-              <td class="right">print</td>
+              <td class="right"> </td>
+              <td class="center"> </td>
+              <td class="right">{{p2_response.final_price.binding_cost_per_copy}}</td>
             </tr>
-            <!-- <tr>
+            <tr>
               <td class="center">4</td>
-              <td class="left">Platinum Support</td> 
-              <td class="left">B&W Pages</td>
-              <td class="right">print</td>
-              <td class="center">print</td>
-              <td class="right">print</td>
-            </tr> -->
+              <!-- <td class="left"></td>  -->
+              <td class="left">Total cost per copy</td>
+              <td class="right"> </td>
+              <td class="center"> </td>
+              <td class="right">{{p2_response.final_price.cost_per_copy}}</td>
+            </tr>
+            <tr>
+              <td class="center">5</td>
+              <!-- <td class="left"></td>  -->
+              <td class="left">Cost for all copies</td>
+              <td class="right">{{p2_response.final_price.no_of_copies}} </td>
+              <td class="center"> </td>
+              <td class="right">{{p2_response.final_price.cost_per_copy}} x {{p2_response.final_price.no_of_copies}}</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -180,25 +196,46 @@
         <div class="col-lg-6 col-sm-5 ml-auto">
           <table class="table table-clear">
             <tbody>
-              <tr>
+              <!-- <tr>
                 <td class="left"><strong>Subtotal</strong></td>
                 <td class="right">0.00 Rs.</td>
-              </tr>
+              </tr> -->
               <tr>
                 <td class="left"><strong>Delivery Cost</strong></td>
-                <td class="right">0.00 Rs.</td>
+                <td class="right">{{p2_response.final_price.no_of_copies}} Rs.</td>
               </tr>
               <tr>
                 <td class="left"><strong>Total</strong></td>
-                <td class="right"><strong>0.00 Rs.</strong><br>
+                <td class="right"><strong>{{p2_response.final_price.total_cost}} Rs.</strong><br>
                   <!-- <strong>0.15050000 BTC</strong></td>-->
               </tr>
             </tbody>
           </table>
+
+
+
+
+
+
         </div>
+
+
       </div>
-    </div>
+
+           <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Upload Recipt : </label> 
+                                    <input class=" btn btn-secondary btn-block" type="file" id="Upload_Recipt" name="p3_recipt" capture="Upload_Recipt" placeholder="Files">
+                                 </div> 
+
+
+                            </div>
+
+
+            <button type="submit" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm" > Confirm  </button>
+
+
   </div>
+
 </div>
 
 
