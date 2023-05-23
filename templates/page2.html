@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+
  <!-- <link rel="stylesheet" href="home.css"> -->
  <link rel="stylesheet" href="{{url_for('static', filename= 'css/home.css') }}">
 
@@ -135,7 +136,9 @@ function handleClick(cb) {
                                     <label class="form-control-label px-3">Color Specification :  </label> 
                                     <label class="form-control-label px-3"><input type="radio" id="Colored" name="p2_cs" placeholder="" onblur="valid(5)" value="Colored"  > Colored</label>
                                     <label class="form-control-label px-3"><input type="radio" id="BnW" name="p2_cs" placeholder="" onblur="valid(5)" value="BnW"  > Black & White</label>
-                                    <label class="form-control-label px-3"><input type="radio" id="Money_saver_print" name="p2_cs" placeholder="" onblur="valid(5)" value="Money_saver_print"  > Money saver print</label> 
+                                    <label class="form-control-label px-3"><input type="radio" id="Money_saver_print" name="p2_cs" placeholder="" onblur="valid(5)" value="Money_saver_print"  > Money saver print <button type="button" class="btn" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  <i class="fa fa-question-circle" style="font-size:16px"></i>
+</button></label> 
                                 </div>
 
 
@@ -178,7 +181,15 @@ function handleClick(cb) {
         <div class="row justify-content-between text-left">
                                 <div class="form-group col-12 flex-column d-flex">
                                 <label class="form-control-label px-3">WHERE DO WE DELIVER THIS TO ? </label>
-                                 <label class="form-control-label px-3">Google Map Location : </label> <input type="text" id="p2_mloc" name="G_loc" placeholder="Link" onblur="valid(6)"  >
+                                 <label class="form-control-label px-3">Google Map Location :<button type="button" class="btn" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  <i class="fa fa-question-circle" style="font-size:16px"></i>
+</button>
+
+ </label>
+
+
+
+<input type="text" id="p2_mloc" name="G_loc" placeholder="Link" onblur="valid(6)"  >
                           
                                   </div>
                             </div>

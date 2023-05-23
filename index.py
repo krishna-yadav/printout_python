@@ -16,16 +16,17 @@ def page1():
 		phone = request.form['C_mobile']
 		email = request.form['C_email']
 		print(username, phone , email)
-		Upload_File = request.files['p1_fname']
-		Upload_Link = request.form.get("p1_link", False)
-		print(Upload_File.filename)
+	
 		enquiry =  request.form.get("enquiry", False)
-
 		if enquiry == "enquiry" :
 			return render_template("goodbye.html", enquiry = enquiry)
 
-		user_folder = os.path.join("C:\\Users\\admin\\OneDrive\\Documents\\Kiran\\new")
-		Upload_File.save(join(user_folder, secure_filename(Upload_File.filename)))
+		Upload_Link = request.form.get("p1_link", False)
+		if Upload_Link == "":
+			Upload_File = request.files['p1_fname']
+			print(Upload_File.filename)
+			user_folder = os.path.join("C:\\Users\\admin\\OneDrive\\Documents\\Kiran\\new")
+			Upload_File.save(join(user_folder, secure_filename(Upload_File.filename)))
 		
 		# files = request.files.getlist("Upload_File")
 		# for file in files:

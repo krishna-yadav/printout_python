@@ -30,8 +30,10 @@ function handleClick(cb) {
   var text = document.getElementById("text");
   if (checkBox.checked == true){
     $(".text").show();
+    $(".FileUpload").attr('disabled', 'disabled');
   } else {
      $(".text").hide();
+     $(".FileUpload").removeAttr('disabled');
   }
 }
 </script>
@@ -168,13 +170,13 @@ function handleClick(cb) {
 
 <div class="row justify-content-center dropZoneContainer">
             <div class="dropZoneOverlay"> Upload File &nbsp; <i class="fa fa-upload" style="font-size:24px"></i></div>
-            <input type="file" id="drop_zone" name="p1_fname"  class="FileUpload"  />
+            <input type="file" id="drop_zone" name="p1_fname"  placeholder="" class="FileUpload"  />
             
         </div>
 
 <br>
 
-
+<!-- ----------------------------------------------------------------------------------------- -->
 
               <div class="row justify-content-center form-group">
                 <input type="checkbox" value="uploadlnk" id="uploadlnk" onclick='handleClick(this);'> <label for="uploadlnk">unable to upload file / multiple files ?</label>
